@@ -1,0 +1,166 @@
+/* Mengatur tampilan dasar body dengan transisi untuk perubahan mode */
+body {
+	font-family: Arial, sans-serif;
+	transition: background 0.3s, color 0.3s;
+	text-align: center;
+	padding: 50px;
+}
+
+/* Mengatur tampilan dasar judul dengan transisi untuk perubahan mode */
+.title {
+	transition: 0.2s;
+}
+
+/* Mode terang dengan latar putih dan teks hitam */
+.light-mode {
+	background: white;
+	color: black;
+}
+
+/* Mode gelap dengan latar hitam dan teks putih */
+.dark-mode {
+	background: black;
+	color: white;
+}
+
+/* Kontainer untuk toggle switch agar berada di tengah */
+.toggle-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+}
+/* Gaya dasar untuk switch toggle */
+.toggle-switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 30px;
+	border-radius: 30px;
+}
+/* Menyembunyikan input default browser */
+.toggle-switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+/* Styling slider toggle */
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	transition: 0.4s;
+	border-radius: 30px;
+}
+
+/* Styling tombol bulat pada slider */
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 20px;
+	width: 20px;
+	left: 4px;
+	bottom: 4px;
+	border-radius: 50%;
+	color: white;
+	transition: 0.4s;
+	background-color: black;
+}
+
+/* Ubah posisi tombol bulat saat checkbox dicentang */
+input:checked + .slider {
+	background-color: #222;
+}
+
+/* Menggeser tombol ke kanan saat diaktifkan */
+input:checked + .slider:before {
+	transform: translateX(28px);
+	background-color: yellow;
+}
+
+/* Styling judul stopwatch */
+.title-stopwatch {
+	font-size: 3rem;
+	margin: 3rem;
+}
+
+/* Container utama stopwatch */
+.container {
+	max-width: 800px;
+	margin: 40px auto;
+	padding: 30px;
+	border-radius: 20px;
+	background-color: rgba(255, 255, 255, 0.8); /* default terang */
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+	transition: background-color 0.3s, color 0.3s;
+}
+
+/* Ubah styling saat dark mode aktif */
+.dark-mode .container {
+	background-color: rgba(30, 30, 30, 0.8); /* warna gelap transparan */
+	color: #f1f1f1;
+}
+
+/* Styling tampilan waktu */
+#display {
+	font-size: 2.5rem;
+	text-align: center;
+	color: #0077cc;
+	margin-bottom: 48px;
+}
+
+/* Ubah styling saat dark mode aktif */
+.dark-mode #display {
+	color: #f1f1f1;
+}
+
+/* Layout tombol */
+.buttons {
+	display: flex;
+	justify-content: space-around;
+}
+
+/* Styling tombol */
+button {
+	border: none;
+	padding: 10px 20px;
+	font-size: 16px;
+	border-radius: 8px;
+	cursor: pointer;
+	color: white;
+}
+
+/* Warna tombol start */
+#start {
+	background-color: #e74c3c;
+}
+
+/* Warna tombol start ketika dihover */
+#start:hover {
+	background-color: #c0392b;
+}
+
+/* Warna tombol pause */
+#pause {
+	background-color: #34495e;
+}
+
+/* Warna tombol pause ketika dihover */
+#pause:hover {
+	background-color: #2c3e50;
+}
+
+/* Warna tombol reset */
+#reset {
+	background-color: #27ae60;
+}
+
+/* Warna tombol reset ketika dihover */
+#reset:hover {
+	background-color: #219653;
+}
